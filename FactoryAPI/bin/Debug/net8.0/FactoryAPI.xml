@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FactoryAPI</name>
+    </assembly>
+    <members>
+        <member name="M:FactoryAPI.Controllers.MachinesController.GetAll">
+            <summary>
+            取得所有工廠機台的狀態與完整維修紀錄
+            </summary>
+            <response code="200">成功取得所有機台清單與關聯的維修紀錄</response>
+        </member>
+        <member name="M:FactoryAPI.Controllers.MachinesController.GetStopped">
+            <summary>
+            取得目前處於停機狀態 (Status = 0) 的所有機台
+            </summary>
+            <response code="200">成功回傳目前停機中的機台清單</response>
+            <response code="404">目前沒有任何機台處於停機狀態</response>
+        </member>
+        <member name="M:FactoryAPI.Controllers.MachinesController.GetByStatus(System.Int32)">
+            <summary>
+            根據特定的狀態碼查詢機台
+            </summary>
+            <param name="status">狀態代碼 (例如：0 為停機，1 為運行中)</param>
+            <response code="200">成功取得符合該狀態的機台清單</response>
+        </member>
+        <member name="M:FactoryAPI.Controllers.MachinesController.CreateMachine(FactoryAPI.Machine)">
+            <summary>
+            在系統中建立一台新的工廠機台
+            </summary>
+            <param name="newMachine">機台的基本資訊 (名稱、狀態、負載)</param>
+            <response code="200">機台建立成功並回傳完整資料</response>
+        </member>
+        <member name="M:FactoryAPI.Controllers.MachinesController.UpdateMachine(System.Int32,FactoryAPI.Machine)">
+            <summary>
+            修改指定機台的名稱、狀態或負載資訊
+            </summary>
+            <param name="id">欲修改的機台 ID</param>
+            <param name="updatedData">新的機台屬性資料</param>
+            <response code="200">機台資訊更新成功</response>
+            <response code="404">找不到指定的機台 ID，無法更新</response>
+        </member>
+        <member name="M:FactoryAPI.Controllers.MachinesController.DeleteMachine(System.Int32)">
+            <summary>
+            根據 ID 從系統中永久移除特定機台
+            </summary>
+            <param name="id">欲刪除的機台 ID</param>
+            <response code="204">機台已成功從資料庫移除</response>
+            <response code="404">找不到指定的機台 ID，無法刪除</response>
+        </member>
+        <member name="M:FactoryAPI.Controllers.MachinesController.PostMaintenance(System.Int32,FactoryAPI.MaintenanceRecord)">
+            <summary>
+            針對特定機台新增一筆報修或保養紀錄
+            </summary>
+            <param name="machineId">目標機台 ID</param>
+            <param name="record">維修內容描述與日期</param>
+            <response code="200">維修紀錄新增成功</response>
+            <response code="404">找不到對應的機台 ID，無法掛載維修紀錄</response>
+        </member>
+        <member name="T:FactoryAPI.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FactoryAPI.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FactoryAPI.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FactoryAPI.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FactoryAPI.Migrations.AddMaintenanceTable">
+            <inheritdoc />
+        </member>
+        <member name="M:FactoryAPI.Migrations.AddMaintenanceTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FactoryAPI.Migrations.AddMaintenanceTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FactoryAPI.Migrations.AddMaintenanceTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
