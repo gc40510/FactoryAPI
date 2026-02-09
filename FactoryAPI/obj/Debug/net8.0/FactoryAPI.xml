@@ -9,6 +9,7 @@
             取得所有工廠機台的狀態與完整維修紀錄
             </summary>
             <response code="200">成功取得所有機台清單與關聯的維修紀錄</response>
+            <response code="404">獲取失敗</response>
         </member>
         <member name="M:FactoryAPI.Controllers.MachinesController.GetStopped">
             <summary>
@@ -24,14 +25,14 @@
             <param name="status">狀態代碼 (例如：0 為停機，1 為運行中)</param>
             <response code="200">成功取得符合該狀態的機台清單</response>
         </member>
-        <member name="M:FactoryAPI.Controllers.MachinesController.CreateMachine(FactoryAPI.Machine)">
+        <member name="M:FactoryAPI.Controllers.MachinesController.CreateMachine(FactoryAPI.Models.Machine)">
             <summary>
             在系統中建立一台新的工廠機台
             </summary>
             <param name="newMachine">機台的基本資訊 (名稱、狀態、負載)</param>
             <response code="200">機台建立成功並回傳完整資料</response>
         </member>
-        <member name="M:FactoryAPI.Controllers.MachinesController.UpdateMachine(System.Int32,FactoryAPI.Machine)">
+        <member name="M:FactoryAPI.Controllers.MachinesController.UpdateMachine(System.Int32,FactoryAPI.Models.Machine)">
             <summary>
             修改指定機台的名稱、狀態或負載資訊
             </summary>
@@ -48,7 +49,7 @@
             <response code="204">機台已成功從資料庫移除</response>
             <response code="404">找不到指定的機台 ID，無法刪除</response>
         </member>
-        <member name="M:FactoryAPI.Controllers.MachinesController.PostMaintenance(System.Int32,FactoryAPI.MaintenanceRecord)">
+        <member name="M:FactoryAPI.Controllers.MachinesController.PostMaintenance(System.Int32,FactoryAPI.Models.MaintenanceRecord)">
             <summary>
             針對特定機台新增一筆報修或保養紀錄
             </summary>

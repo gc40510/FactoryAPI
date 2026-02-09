@@ -1,6 +1,8 @@
 ﻿using FactoryAPI;
+using FactoryAPI.Models;
 
 namespace FactoryAPI.Services;
+
 
 public interface IMachineService
 {

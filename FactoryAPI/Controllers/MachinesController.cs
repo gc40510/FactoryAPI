@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using FactoryAPI.Data;
 using FactoryAPI.Services;
+using FactoryAPI.Models;
 
 namespace FactoryAPI.Controllers;
 
@@ -20,6 +21,7 @@ public class MachinesController : ControllerBase
     /// 取得所有工廠機台的狀態與完整維修紀錄
     /// </summary>
     /// <response code="200">成功取得所有機台清單與關聯的維修紀錄</response>
+    /// <response code="404">獲取失敗</response>
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<Machine>), StatusCodes.Status200OK)]
     public async Task<ActionResult<IEnumerable<Machine>>> GetAll()

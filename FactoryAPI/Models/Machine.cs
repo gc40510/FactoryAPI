@@ -1,4 +1,4 @@
-﻿namespace FactoryAPI;
+﻿namespace FactoryAPI.Models;
 
 public class Machine
 {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using FactoryAPI.Models;
 
 namespace FactoryAPI.oldversion;
 

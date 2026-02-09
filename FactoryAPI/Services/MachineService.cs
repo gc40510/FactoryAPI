@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace FactoryAPI.Services;
+using FactoryAPI.Models;
 
 public class MachineService : IMachineService
 {

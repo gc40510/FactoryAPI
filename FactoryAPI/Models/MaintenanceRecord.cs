@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace FactoryAPI;
+namespace FactoryAPI.Models;
 
 public class MaintenanceRecord
 {

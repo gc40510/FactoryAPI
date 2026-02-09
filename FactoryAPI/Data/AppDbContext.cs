@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using FactoryAPI.Models;
 namespace FactoryAPI.Data
 {
     public class AppDbContext : DbContext
